@@ -8,8 +8,8 @@ let candidateName = " ";
 let question= " ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = " ";
-let questions = ["Who was the first American woman in space?", "True or false: 5 Kilometer == 5000 meters?", "(5+3)/2*10=?", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
-let correctAnswers = ["Sally Ride", true, 40, "Trajectory", 3];
+let questions = ["1) Who was the first American woman in space? ", "2) True or false: 5 Kilometer == 5000 meters? ", "3) (5+3)/2*10=? ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = " ";
 
 
@@ -24,8 +24,9 @@ function askQuestion() {
 for (let i = 0; i < questions.length; i++) {
   candidateAnswers = input.question(questions[i]);
    if (candidateAnswers === correctAnswers[i]) {
-    console.log(`${candidateAnswers} is correct.`);
+    console.log(`Correct Answer: ${correctAnswers[i]}`)
   } else (console.log(`Incorrect. The correct is answer is ${correctAnswers[i]}`));
+  console.log('\n')
 }
 
 } 
@@ -47,7 +48,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log("Greetings, " + candidateName);
+  // console.log("Greetings, " + candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
