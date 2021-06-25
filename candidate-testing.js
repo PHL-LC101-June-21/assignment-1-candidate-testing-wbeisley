@@ -6,16 +6,17 @@ const input = require('readline-sync');
 let candidateName = " ";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question= " ";
-let correctAnswer = "Sally Ride";
+let correctAnswer = " ";
 let candidateAnswer = " ";
 let questions = ["1) Who was the first American woman in space? ", "2) True or false: 5 Kilometer == 5000 meters? ", "3) (5+3)/2*10=? ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = " ";
 
 
+
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  candidateName = input.question("What is your name? ")
+  candidateName = input.question("Candidate Name: ")
 }
 
 function askQuestion() {
@@ -23,10 +24,13 @@ function askQuestion() {
   /* candidateAnswer = input.question("1. Who was the first American woman in space? ")*/
 for (let i = 0; i < questions.length; i++) {
   candidateAnswers = input.question(questions[i]);
-   if (candidateAnswers === correctAnswers[i]) {
+   if (candidateAnswers.toUpperCase() === correctAnswers[i].toUpperCase()) {
     console.log(`Correct Answer: ${correctAnswers[i]}`)
-  } else (console.log(`Incorrect. The correct is answer is ${correctAnswers[i]}`));
   console.log('\n')
+   }
+  
+  // } else (console.log(`Correct Answer: ${correctAnswers[i]}`));
+  // console.log('\n')
 }
 
 } 
