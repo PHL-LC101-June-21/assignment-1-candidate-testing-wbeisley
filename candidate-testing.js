@@ -27,10 +27,8 @@ for (let i = 0; i < questions.length; i++) {
    if (candidateAnswers.toUpperCase() === correctAnswers[i].toUpperCase()) {
     console.log(`Correct Answer: ${correctAnswers[i]}`)
   console.log('\n')
-   }
-  
-  // } else (console.log(`Correct Answer: ${correctAnswers[i]}`));
-  // console.log('\n')
+   } else {(console.log(`Correct Answer: ${correctAnswers[i]}`));
+  console.log('\n')}
 }
 
 } 
@@ -44,11 +42,19 @@ function gradeQuiz(candidateAnswers) {
     console.log(`${candidateAnswers} is correct.`);
   } else (console.log(`Incorrect. The correct is answer is ${correctAnswers}`)) */
 
-  let grade;
-  
-  return grade;
-}
+  let grade = 0;
 
+  for (let i = 0; i < correctAnswers.length; i++) {
+    if (candidateAnswers[i] === correctAnswers[i]) {
+      grade += 1;
+    
+  }
+  }
+ 
+  return grade;
+  console.log(grade)
+}
+ 
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
