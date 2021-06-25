@@ -23,7 +23,7 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   /* candidateAnswer = input.question("1. Who was the first American woman in space? ")*/
 for (let i = 0; i < questions.length; i++) {
-  candidateAnswers = input.question(questions[i]);
+  candidateAnswers = input.question(questions[i] + '\n' + "Your Answer: ");
    if (candidateAnswers.toUpperCase() === correctAnswers[i].toUpperCase()) {
     console.log(`Correct Answer: ${correctAnswers[i]}`)
   console.log('\n')
